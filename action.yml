@@ -1,0 +1,9 @@
+name: 'Comment ID'
+description: 'Comments with URL ID'
+inputs:
+  token:
+    description: 'Github Token (needs issue write access)'
+    required: true
+runs:
+  using: 'node16'
+  main: 'index.js'
