@@ -10,8 +10,8 @@ const crypto = require("crypto");
     hash.update(`${github.context.issue.number}`);
 
     await octokit.rest.issues.createComment({
-        owner: repo[0],
-        repo: repo[1],
+        owner: github.context.repo.owner,
+        repo: github.context.repo.repo,
         issue_number: github.context.issue.number,
         body: `The link ID is \`${hash.digest("hex").substring(0, 6)}\``
     });
